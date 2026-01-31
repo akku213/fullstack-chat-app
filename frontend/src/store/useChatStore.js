@@ -64,5 +64,11 @@ export const useChatStore = create((set, get) => ({
     socket.off("newMessage");
   },
 
-  setSelectedUser: (selectedUser) => set({ selectedUser }),
+  setSelectedUser: (selectedUser) => {
+    if (selectedUser) {
+      set({ selectedUser, messages: [] }); // Clear messages when switching users
+    } else {
+      set({ selectedUser, messages: [] });
+    }
+  },
 }));
