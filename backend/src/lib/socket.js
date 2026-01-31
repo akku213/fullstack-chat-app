@@ -11,6 +11,7 @@ const io = new Server(server, {
       "http://localhost:5173",
       "https://fullstack-chat-app-dbjp.onrender.com"
     ],
+    credentials: true,
   },
 });
 
